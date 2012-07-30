@@ -1,0 +1,232 @@
+
+@import url('../twentyeleven/style.css');
+
+/*
+Theme Name: Child for FP
+Theme URI:http://www.atwild.com
+Author: Amit Kvint
+Author URI: http://webifish.com/
+Version: 0.0.1
+Template: twentyeleven
+Description: este tema la hice para mostrar a mis alumnos del curso FP de chiclana que se puede llegar muy lejos con un Tema hijo, usando poquito a poco lo que ya saben de CSS & un paso mas...y esta inspirado en la visita que hicimos la familia este domingo a la esculptura imprecionante de James Turrell - un gran artista :-)
+ */
+ 
+ /*Let's start by defining things like the body background color, 
+ the typography, and other basics that will give us the basis for our child theme.
+  This code sets up everything in the header, with the exception of moving our navigation menu.
+   Let's break it down into a few different steps.
+This first block of code gives us all of our basic typography 
+(we'll be pulling in "Droid Sans" and "Dancing Script" from Google Web Fonts;
+ more on that in the section on functions.php):
+*/
+
+body, input, textarea, p {
+    color: #ffffff;
+    font-family: 'Droid Sans', sans-serif;
+}
+p {
+    font-size: 14px;
+    line-height: 24px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dancing Script', cursive;
+}
+
+/*This next section sets up the main content background and drop shadow.
+*/
+
+#page {
+    background: #f5f5dc;
+    -moz-box-shadow: 0 0 10px #67949c;
+    -webkit-box-shadow: 0 0 10px #67949c;
+    box-shadow: 0 0 10px #67949c;
+}
+
+/*Then we'll make some adjustments on our blog title and description, as well as changing the top border of the header and removing the search form (which will be replaced with our navigation menu in the next step).
+*/
+#site-title a {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+#branding {
+    border-top: 2px solid #67949c;
+}
+#branding #searchform {
+    display: none;
+}
+#site-description {
+    font-size: 18px;
+    margin: 0 270px 3em 0;
+}
+
+
+/*The next change we want to make is to move the navigation menu 
+from its default position under the header image to the upper right, 
+opposite the blog title or logo.
+This format works best for sites that only have a small number of pages.
+ Larger sites, or sites with sub-pages, 
+ will need additional consideration, and likely won't work well with this kind of layout.
+*/
+
+#access {
+    clear: both;
+    display: block;
+    float: right;
+    margin: 0 auto 6px;
+    position: relative;
+    top: -800px;
+    width: 500px;
+    background: none;
+    box-shadow: none;
+
+}
+
+/*Your navigation menu should now be sitting up above the header image, adjacent to your logo. 
+Next we'll add some styles to our navigation and turn them into buttons instead of a solid bar. 
+Here's the code for the basic font styling:*/
+
+#access a {
+    font-family: 'Dancing Script', 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 0 1em;
+    line-height: 2.666em;
+}
+
+/*Here's the basic formatting for the button behind the text, including a nice inner shadow:
+*/
+#access li {
+    background: #84bbc5;
+    margin-right: 15px;
+    -moz-box-shadow: inset 0 0 3px 3px #739ca3;
+    -webkit-box-shadow: inset 0 0 3px 3px #739ca3;
+    box-shadow: inset 0 0 3px 3px #739ca3;
+
+}
+
+/*And here's the code for adding a drop shadow behind the buttons when 
+they're hovered over (which actually gives the impression of an animation effect in use):
+*/
+#access li:hover > a, #access a:focus {
+    background: #84bbc5;
+    color: #EEEEEE;
+    -moz-box-shadow: 0 0 3px 3px #739ca3;
+    -webkit-box-shadow: 0 0 3px 3px #739ca3;
+    box-shadow: 0 0 3px 3px #739ca3;
+}
+
+/*Let's add some very basic styles for your sidebar. The changes we're making here are primarily to make the sidebars match the design of the rest of the site. Here's the code:
+*/
+#secondary.widget-area {
+	width: 185px;
+	height: 140px;
+
+}
+
+.widget a {
+    font-weight: 400;
+    font-family: 'Droid Sans', sans-serif !important;
+	font-size: 1.1em;
+}
+.widget-title {
+    color: #282828;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+	font-size: 1.3em;
+	text-transform: none;
+}
+
+/*First we want to change the padding for the top of the posts, so the first post lines up with the top of the sidebar.
+*/
+.entry-title {
+    padding-top: 0px;
+}
+
+/*Next we'll change the comment icon that appears next to the post title on the home page. This one is simple: just create your new icon (I've created versions for active and inactive versions) and then upload them using WP's media uploader. Take the URL for each, and insert them like this:*/
+
+.entry-header .comments-link a {
+    background: url("http://blogetic.com/site/wp-content/uploads/2011/11/comment-link.png") no-repeat scroll 0 0;
+    top: 0;
+}
+.entry-header .comments-link a:hover, .entry-header .comments-link a:focus, .entry-header .comments-link a:active {
+    background: url("http://blogetic.com/site/wp-content/uploads/2011/11/comment-active.png") no-repeat scroll 0 0;
+    background-color:  #f5f5dc !important;
+}
+
+/*Next we'll work on the comments styling. This is simple, as all we're doing is changing the color scheme. Here's the code:
+*/
+#respond {
+    background: none repeat scroll 0 0 #dadabe;
+    border: 1px solid #67949c;
+}
+#respond input[type="text"], #respond textarea {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 4px solid #b3b398;
+}
+#respond .comment-form-author label, #respond .comment-form-email label, #respond .comment-form-url label, #respond .comment-form-comment label {
+    background: none repeat scroll 0 0 #b3b398;
+    box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
+    color: #555555;
+}
+#respond input#submit {
+    background: none repeat scroll 0 0 #67949c;
+}
+
+#footerMenu ul li{
+	list-style:	none;
+	display: inline;
+}
+#footerMenu ul li a{
+	padding: 15px;
+	text-decoration: none;
+	background: #fff;
+	border: 2px dashed #000;
+	font-size: 1.4em;
+
+}
+#fixed ul li{
+	list-style: none;
+}
+
+/* Three Footer Widget Areas */
+#supplementary.three .widget-area {
+	float: left;
+	margin-right: 3.7%;
+	width: 20.85%;
+}
+
+#header-widget{
+	float: right;
+	background: #ccc;
+	padding: 10px;
+	-moz-box-shadow: 0 0 40px #fff;
+    -webkit-box-shadow: 0 0 40px #fff;
+    box-shadow: 0 0 40px #fff;
+
+}
+#header-widget h3{
+	color: #000;
+}
+
+#header-widget ul{
+	margin: 2px auto;
+
+}
+
+#header-widget ul li{
+	list-style:none;
+}
+#header-widget ul li a{
+	display: block;
+	font-size: 1.3em;
+	text-decoration: none;
+	color: #000;
+}
+
+#destacada {
+	float: left;
+	padding: 3px 10px 10px 0;
+}
+
